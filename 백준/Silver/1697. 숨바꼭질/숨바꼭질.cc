@@ -18,10 +18,10 @@ int main() {
         auto cur = q.front();
         q.pop();
         for(int nx : {cur+1, cur-1, 2*cur}) {
-            // if(nx == k) {
-            //     cout << dist[cur] + 1;
-            //     return 0;
-            // }
+            if(nx == k) {
+                dist[nx] = dist[cur] + 1;
+                break;
+            }
             if(nx >= 100001 || nx < 0) {
                 continue;
             }
