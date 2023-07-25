@@ -10,21 +10,21 @@ int main() {
     ll n, m;
     ll ans;
     cin >> n >> m;
+    ll arr[n];
 
     for(int i = 0; i < n; i++) {
         cin >> arr[i];
     }
 
     ll start = 0;
-    sort(arr, arr+n);
-    ll end = arr[n-1];
+    ll end = *max_element(arr, arr + n);
     
     while(start <= end) {
         ll total = 0;
-        ll mid = (start + end) / 2;
-        for(int i = 0; i < n; i++) {
-            if(arr[i] > mid) {
-                total += (arr[i] - mid);
+        ll mid = (start + end + 1) / 2;
+        for(auto i : arr) {
+            if(i > mid) {
+                total += (i - mid);
             }
         }
         if (total < m) {
