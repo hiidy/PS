@@ -37,6 +37,5 @@ int main() {
                 cout << stk.top() << "\n";
             }
         }
-        
     }
 }
