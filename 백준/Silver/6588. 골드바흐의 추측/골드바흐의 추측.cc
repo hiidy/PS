@@ -10,11 +10,11 @@ int main() {
     cin.tie(0);
 
     sieve[1] = false;
-    for(int i = 1; i <= MAX; i++) {
+    for(int i = 1; i*i <= MAX; i++) {
         if(!sieve[i]) {
             continue;
         }
-        for(int j = i + i; j <=MAX; j = j + i) {
+        for(int j = i * i; j <=MAX; j = j + i) {
             sieve[j] = false;
             }
     }
