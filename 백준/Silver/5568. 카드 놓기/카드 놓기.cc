@@ -4,7 +4,7 @@ using namespace std;
 vector<string> v;
 bool visited[11];
 set<string> ans;
-vector<string> perm;
+string perm[11];
 int n, k;
 
 void dfs(int depth) {
@@ -21,9 +21,8 @@ void dfs(int depth) {
             continue;
         }
         visited[i] = true;
-        perm.push_back(v[i]);
+        perm[depth] = v[i];
         dfs(depth + 1);
-        perm.pop_back();
         visited[i] = false;
 
     }
