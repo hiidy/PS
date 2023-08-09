@@ -32,10 +32,10 @@ int main() {
             continue;
         }
         for (auto nxt : adj[cur.Y]) {
-            if (d[nxt.Y] <= d[cur.Y] + nxt.X) {
+            if (d[nxt.Y] <= cur.X + nxt.X) {
                 continue;
             }
-            d[nxt.Y] = d[cur.Y] + nxt.X;
+            d[nxt.Y] = cur.X + nxt.X;
             pq.push({d[nxt.Y], nxt.Y});
             pre[nxt.Y] = cur.Y;
         }
