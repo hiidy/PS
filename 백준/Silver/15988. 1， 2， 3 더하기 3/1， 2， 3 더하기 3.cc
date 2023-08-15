@@ -21,6 +21,6 @@ int main() {
     while (t--) {
         int n;
         cin >> n;
-        cout << dp[n] % MOD << "\n";
+        cout << dp[n] << "\n";
     }
 }
