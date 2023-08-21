@@ -34,7 +34,6 @@ int main() {
         int input;
         cin >> input;
         is_diff_group(0, input);
-        cnt++;
     }
     for(int i = 0; i < m; i++) {
         int cost, a, b;
