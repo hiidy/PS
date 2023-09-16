@@ -2,23 +2,23 @@
 using namespace std;
 
 int n, m;
-bool isused[10];
 int arr[10];
+bool isUsed[10];
 
 void func(int k) {
-    if (m == k) {
-        for (int i = 0; i < m; i++) {
+    if (k == m) {
+        for (int i = i; i < m; i++) {
             cout << arr[i] << ' ';
         }
         cout << '\n';
-        return;    
     }
+
     for (int i = 1; i <= n; i++) {
-        if(!isused[i]) {
+        if (!isUsed[i]) {
             arr[k] = i;
-            isused[i] = 1;
-            func(k+1);
-            isused[i] = 0;
+            isUsed[i] = true;
+            func(k + 1);
+            isUsed[i] = false;
         }
     }
 }
