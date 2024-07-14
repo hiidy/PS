@@ -1,36 +1,35 @@
 #include <iostream>
 #include <unordered_map>
-#include <vector>
-#include <algorithm>
 
 using namespace std;
 
-
 int main(int argc, char** argv)
 {
-    int test_case;
     int T;
-    cin>>T;
-    for(test_case = 1; test_case <= T; ++test_case)
+    cin >> T;
+
+    for(int test_case = 1; test_case <= T; ++test_case)
     {   
         int n;
         cin >> n;
-        unordered_map<int, int> m;
-        vector<int> ans;
-        int mode = -1;
-        for (int i = 1; i <= 1000; i++) {
+        
+        unordered_map<int, int> frequency;
+        int max_frequency = 0;
+        int mode = 0;
+
+        for (int i = 0; i < 1000; i++) {
             int score;
             cin >> score;
-            m[score]++;
-            if (m[score] >= m[mode]) {
-                if (m[score] == m[mode] && score > mode) {
-                    mode = score;
-                    continue;
-                }
+            frequency[score]++;
+
+            if (frequency[score] > max_frequency || 
+               (frequency[score] == max_frequency && score > mode)) {
+                max_frequency = frequency[score];
                 mode = score;
             }
         }
-        cout << '#' << n << ' ' << mode << '\n';
+
+        cout << '#' << test_case << ' ' << mode << '\n';
     }
     return 0;
 }
